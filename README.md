@@ -34,7 +34,7 @@
 - CDN 服务提供商查询
 - 支持管道处理
 - 支持交互式查询
-- 同时支持IPv4和IPv6
+- 同时支持 IPv4 和 IPv6
 - 支持多语言
 - 查询完全离线
 - 全平台支持
@@ -52,7 +52,7 @@ $ go install github.com/zu1k/nali@latest
 
 ### 下载预编译的可执行程序
 
-可以从Release页面下载预编译好的可执行程序: [Release](https://github.com/zu1k/nali/releases)
+可以从 Release 页面下载预编译好的可执行程序: [Release](https://github.com/zu1k/nali/releases)
 
 你需要选择适合你系统和硬件架构的版本下载，解压后可直接运行
 
@@ -63,10 +63,10 @@ $ go install github.com/zu1k/nali@latest
 - `nali-go`: Release 版本，安装时编译
 - `nali-go-bin`: Release 版本，预编译的二进制文件
 - `nali-go-git`: 最新的 master 分支版本，安装时编译
-  
+
 ## 使用说明
 
-### 查询一个IP的地理信息
+### 查询一个 IP 的地理信息
 
 ```
 $ nali 1.2.3.4
@@ -80,7 +80,7 @@ $ echo IP 6.6.6.6 | nali
 IP 6.6.6.6 [美国 亚利桑那州华楚卡堡市美国国防部网络中心]
 ```
 
-### 同时查询多个IP的地理信息
+### 同时查询多个 IP 的地理信息
 
 ```
 $ nali 1.2.3.4 4.3.2.1 123.23.3.0
@@ -91,7 +91,7 @@ $ nali 1.2.3.4 4.3.2.1 123.23.3.0
 
 ### 交互式查询
 
-使用 `exit` 或  `quit` 退出查询
+使用 `exit` 或 `quit` 退出查询
 
 ```
 $ nali
@@ -141,9 +141,9 @@ Address: 172.67.135.48 [美国 CloudFlare节点]
 bash abc.sh | nali
 ```
 
-Nali 将在 IP后面插入IP地理信息，CDN域名后面插入CDN服务提供商信息
+Nali 将在 IP 后面插入 IP 地理信息，CDN 域名后面插入 CDN 服务提供商信息
 
-### 支持IPv6
+### 支持 IPv6
 
 和 IPv4 用法完全相同
 
@@ -188,15 +188,15 @@ Address: 2001:428:6402:21b::6 [美国Louisiana州Monroe Qwest Communications Com
 ```yaml
 - name: geoip
   name-alias:
-  - geolite
-  - geolite2
+    - geolite
+    - geolite2
   format: mmdb
   file: GeoLite2-City.mmdb
   languages:
-  - ALL
+    - ALL
   types:
-  - IPv4
-  - IPv6
+    - IPv4
+    - IPv6
 ```
 
 其中，`languages` 和 `types` 表示该数据库支持的语言和查询类型。 如果你需要增加数据库，需小心修改配置文件，如果有任何问题，欢迎提 issue 询问。
@@ -251,9 +251,9 @@ $ nali update --db qqwry,cdn
 - DBIP `['dbip', 'db-ip']`
 - IP2Location `['ip2location']`
 
-#### Windows平台
+#### Windows 平台
 
-##### 使用geoip数据库
+##### 使用 geoip 数据库
 
 ```
 set NALI_DB_IP4=geoip
@@ -263,7 +263,7 @@ set NALI_DB_IP4=geoip
 $env:NALI_DB_IP4="geoip"
 ```
 
-##### 使用ipip数据库
+##### 使用 ipip 数据库
 
 ```
 set NALI_DB_IP6=ipip
@@ -273,15 +273,15 @@ set NALI_DB_IP6=ipip
 $env:NALI_DB_IP6="ipip"
 ```
 
-#### Linux平台
+#### Linux 平台
 
-##### 使用geoip数据库
+##### 使用 geoip 数据库
 
 ```
 export NALI_DB_IP4=geoip
 ```
 
-##### 使用ipip数据库
+##### 使用 ipip 数据库
 
 ```
 export NALI_DB_IP4=ipip
@@ -289,7 +289,7 @@ export NALI_DB_IP4=ipip
 
 ### 多语言支持
 
-通过修改环境变量 `NALI_LANG` 来指定使用的语言，当使用非中文语言时仅支持GeoIP2这个数据库
+通过修改环境变量 `NALI_LANG` 来指定使用的语言，当使用非中文语言时仅支持 GeoIP2 这个数据库
 
 该参数可设置的值见 GeoIP2 这个数据库的支持列表
 
@@ -306,6 +306,10 @@ export NALI_DB_IP4=ipip
 
 如果未指定相关环境变量，将使用 XDG 规范，配置文件目录在 `$XDG_CONFIG_HOME/nali`，数据库文件目录在 `$XDG_DATA_HOME/nali`
 
+配置文件目录会是：~/.config/nali
+
+数据库文件目录会是：~/.local/share/nali
+
 ```
 set NALI_HOME=D:\nali
 
@@ -316,19 +320,19 @@ export NALI_HOME=/var/nali
 
 ## 感谢列表
 
-- [纯真QQIP离线数据库](http://www.cz88.net)
-- [qqwry纯真数据库解析](https://github.com/yinheli/qqwry)
-- [ZX公网ipv6数据库](https://ip.zxinc.org/ipquery/)
-- [Geoip2 city数据库](https://www.maxmind.com/en/geoip2-precision-city-service)
-- [geoip2-golang解析器](https://github.com/oschwald/geoip2-golang)
-- [CDN provider数据库](https://github.com/SukkaLab/cdn)
-- [IPIP数据库](https://www.ipip.net/product/ip.html)
-- [IPIP数据库解析](https://github.com/ipipdotnet/ipdb-go)
-- [ip2region数据库](https://github.com/lionsoul2014/ip2region)
+- [纯真 QQIP 离线数据库](http://www.cz88.net)
+- [qqwry 纯真数据库解析](https://github.com/yinheli/qqwry)
+- [ZX 公网 ipv6 数据库](https://ip.zxinc.org/ipquery/)
+- [Geoip2 city 数据库](https://www.maxmind.com/en/geoip2-precision-city-service)
+- [geoip2-golang 解析器](https://github.com/oschwald/geoip2-golang)
+- [CDN provider 数据库](https://github.com/SukkaLab/cdn)
+- [IPIP 数据库](https://www.ipip.net/product/ip.html)
+- [IPIP 数据库解析](https://github.com/ipipdotnet/ipdb-go)
+- [ip2region 数据库](https://github.com/lionsoul2014/ip2region)
 - [IP2Location DB3 LITE](https://lite.ip2location.com/database/db3-ip-country-region-city)
-- [Cobra CLI库](https://github.com/spf13/cobra)
+- [Cobra CLI 库](https://github.com/spf13/cobra)
 
-感谢 JetBrains 提供开源项目免费License 
+感谢 JetBrains 提供开源项目免费 License
 
 <a href="https://www.jetbrains.com/?from=nali">
   <img src="assets/GoLand.svg">
