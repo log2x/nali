@@ -15,8 +15,8 @@ import (
 )
 
 var DownloadUrls = []string{
-	"https://cdn.jsdelivr.net/gh/lionsoul2014/ip2region/data/ip2region.xdb",
-	"https://raw.githubusercontent.com/lionsoul2014/ip2region/master/data/ip2region.xdb",
+	// "https://cdn.jsdelivr.net/gh/lionsoul2014/ip2region/data/ip2region.xdb",
+	"https://raw.githubusercontent.com/lionsoul2014/ip2region/master/data/ip2region_v4.xdb",
 }
 
 type Ip2Region struct {

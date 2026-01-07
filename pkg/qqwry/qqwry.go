@@ -14,7 +14,7 @@ import (
 )
 
 var DownloadUrls = []string{
-	"https://github.com/metowolf/qqwry.dat/releases/latest/download/qqwry.dat",
+	"https://github.com/metowolf/qqwry.dat/releases/download/20251231/qqwry.dat",
 	// Other repo:
 	// https://github.com/HMBSbige/qqwry // This repository has been archived since Jun 27, 2024.
 	// https://github.com/FW27623/qqwry // This repository's dat format will not be maintained after October 2024.
